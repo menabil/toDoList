@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="todo-card">
+        <header class="todo-header">
+          <h1 class="hOne">My Tasks</h1>
+        </header>
+        <div class="input-section">
+          <input
+            type="text"
+            id="inputBox"
+            class="task-input"
+            placeholder="What needs to be done?"
+          />
+          <button onclick="addTask()" class="add-btn">Add</button>
+        </div>
+        <ul id="todoList" class="task-list"></ul>
+      </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
