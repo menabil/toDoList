@@ -1,0 +1,21 @@
+# Dependencies – npm install এ তৈরি হয়, git এ রাখার দরকার নেই
+node_modules/
+
+# Build output
+dist/
+
+# Vite cache
+.vite/
+
+# Environment variables (secret থাকলে git এ দেওয়া বিপজ্জনক)
+.env
+.env.local
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,66 @@
+/* ── Tailwind এর তিনটা layer import করতে হয় ── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global font ─────────────────────────────────────────── */
+body {
+  font-family: "Inter", sans-serif;
+  /* Subpixel anti-aliasing বন্ধ রাখলে dark bg তে text পরিষ্কার দেখায় */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom scrollbar (dark theme এ মানানসই) ─────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+/* ── Checkbox check-mark animation ───────────────────────── */
+/* JavaScript দিয়ে .is-visible class toggle করা হয় */
+.checkmark-icon {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  transform: scale(0);
+  opacity: 0;
+}
+.checkmark-icon.is-visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ── Task item fade-in animation (নতুন task যোগ হলে) ──────── */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.task-enter-animation {
+  animation: fadeSlideDown 0.2s ease forwards;
+}
+
+/* ── Input error shake animation ─────────────────────────── */
+@keyframes shakeInput {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+.input-shake {
+  animation: shakeInput 0.4s ease;
+}
